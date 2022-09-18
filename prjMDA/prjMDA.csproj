@@ -1,0 +1,824 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3F997BE-8FEB-45A5-8FF1-5CC380F47EA0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>prjMDA</RootNamespace>
+    <AssemblyName>prjMDA</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="MDA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDA.Designer.cs">
+      <DependentUpon>MDA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDAModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDAModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDAModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDAModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDAModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CMember.cs" />
+    <Compile Include="Models\C圖片.cs" />
+    <Compile Include="Models\frmKeyword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\frmKeyword.designer.cs">
+      <DependentUpon>frmKeyword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MDASr.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\viewMDA.cs" />
+    <Compile Include="主畫面\main商品管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主畫面\main商品管理.designer.cs">
+      <DependentUpon>main商品管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主畫面\main優惠券管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主畫面\main優惠券管理.designer.cs">
+      <DependentUpon>main優惠券管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主畫面\main會員管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主畫面\main會員管理.designer.cs">
+      <DependentUpon>main會員管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主畫面\main評論管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主畫面\main評論管理.designer.cs">
+      <DependentUpon>main評論管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主畫面\main電影管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主畫面\main電影管理.designer.cs">
+      <DependentUpon>main電影管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主畫面\main電影院管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主畫面\main電影院管理.designer.cs">
+      <DependentUpon>main電影院管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="使用優惠明細UsingCouponLists.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="優惠\Coupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="優惠\Coupon.designer.cs">
+      <DependentUpon>Coupon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="優惠\CouponList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="優惠\CouponList.designer.cs">
+      <DependentUpon>CouponList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="優惠\優惠券分析.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="優惠\優惠券分析.Designer.cs">
+      <DependentUpon>優惠券分析.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\CProductsDetail.cs" />
+    <Compile Include="商品\ItemTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="商品\ItemTemplate.designer.cs">
+      <DependentUpon>ItemTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\ItemTemplateTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="商品\ItemTemplateTicket.designer.cs">
+      <DependentUpon>ItemTemplateTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\商品.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\商品.designer.cs">
+      <DependentUpon>商品.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\商品修改.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\商品修改.designer.cs">
+      <DependentUpon>商品修改.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\商品明細.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\商品明細.designer.cs">
+      <DependentUpon>商品明細.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\報表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\報表.designer.cs">
+      <DependentUpon>報表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\新影城.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\新影城.designer.cs">
+      <DependentUpon>新影城.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\新票種.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\新票種.designer.cs">
+      <DependentUpon>新票種.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\票價資訊.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\票價資訊.designer.cs">
+      <DependentUpon>票價資訊.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\訂單總表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\訂單總表.designer.cs">
+      <DependentUpon>訂單總表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\關鍵字查詢.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\關鍵字查詢.designer.cs">
+      <DependentUpon>關鍵字查詢.cs</DependentUpon>
+    </Compile>
+    <Compile Include="會員\frmBonusPlus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員\frmBonusPlus.designer.cs">
+      <DependentUpon>frmBonusPlus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="會員\frmList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員\frmList.designer.cs">
+      <DependentUpon>frmList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="會員\frmMemChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員\frmMemChart.Designer.cs">
+      <DependentUpon>frmMemChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="會員\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員\frmReport.designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="評論\Frm_MDA評論分析.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="評論\Frm_MDA評論分析.designer.cs">
+      <DependentUpon>Frm_MDA評論分析.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影\frmEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影\frmEmail.designer.cs">
+      <DependentUpon>frmEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影\Member.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影\Member.designer.cs">
+      <DependentUpon>Member.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影\MovieCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影\MovieCode.designer.cs">
+      <DependentUpon>MovieCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影\MovieIImagesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影\MovieIImagesList.designer.cs">
+      <DependentUpon>MovieIImagesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影\MovieImages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影\MovieImages.designer.cs">
+      <DependentUpon>MovieImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影\MovieLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影\MovieLanguage.designer.cs">
+      <DependentUpon>MovieLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="優惠\PJFormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="優惠\PJFormMain.designer.cs">
+      <DependentUpon>PJFormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="優惠\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="優惠\UserControl1.designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="優惠明細CouponLists.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="優惠總表Coupon.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="出售座位明細SeatSold.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="出售座位狀態SeatStatus.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="商品資料Products.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="回覆樓數Floor.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="國家總表Countrys.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="場次Screening.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="對象Targets.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="導演總表Director.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="影城MainTheater.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="影廳Cinema.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="我的片單MyMovieLists.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="我的追蹤清單MyFollowLists.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="會員Members.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="會員\frmMemInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員\frmMemInfo.designer.cs">
+      <DependentUpon>frmMemInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="會員\frmMemManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員\frmMemManage.designer.cs">
+      <DependentUpon>frmMemManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="會員\frmMemNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員\frmMemNew.designer.cs">
+      <DependentUpon>frmMemNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="會員\frmMemSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員\frmMemSearch.designer.cs">
+      <DependentUpon>frmMemSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="會員\frmMemSign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員\frmMemSign.designer.cs">
+      <DependentUpon>frmMemSign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="會員\frmMemStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員\frmMemStart.designer.cs">
+      <DependentUpon>frmMemStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="標籤明細HashtagsList.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="標籤總表Hashtags.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="次片種總表Types.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="演員總表Actors.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImageToBinary.cs" />
+    <Compile Include="片單總表MovieLists.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="片種總表TotalTypes.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="票價資訊TicketPrice.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="票種TicketType.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="系列電影MovieSeries.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="訂單明細OrderDetail.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="訂單狀態OrderStatus.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="訂單總表Orders.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="評論圖片明細CommentImagesList.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="評論圖片總表CommentImages.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="購買商品明細Receipt.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="追讚倒ActionTypes.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="電影Movies.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Class.cs" />
+    <Compile Include="評論\Frm_MDAcommentForAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="評論\Frm_MDAcommentForAdmin.designer.cs">
+      <DependentUpon>Frm_MDAcommentForAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="評論\Frm_MDAcommentForMem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="評論\Frm_MDAcommentForMem.designer.cs">
+      <DependentUpon>Frm_MDAcommentForMem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\c評論圖片.cs" />
+    <Compile Include="Models\UserControlPics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Models\UserControlPics.designer.cs">
+      <DependentUpon>UserControlPics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\obj.cs" />
+    <Compile Include="電影\電影分級.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影\電影分級.designer.cs">
+      <DependentUpon>電影分級.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影\演員類.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影\演員類.Designer.cs">
+      <DependentUpon>演員類.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影\導演類.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影\導演類.Designer.cs">
+      <DependentUpon>導演類.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影\電影圖片.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影\電影圖片.Designer.cs">
+      <DependentUpon>電影圖片.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影\電影票房分析.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影\電影票房分析.Designer.cs">
+      <DependentUpon>電影票房分析.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影主演Cast.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="電影代碼MovieCode.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="電影分級MovieRating.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="電影圖片MovieIImagesList.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="電影圖片總表MovieImages.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="電影導演MovieDirector.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="電影片種MovieType.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="電影產地MovieOrigin.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="電影評論MovieComment.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="電影語言MovieLanguage.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="電影院Theater.cs">
+      <DependentUpon>MDAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="電影院\場次.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影院\場次.designer.cs">
+      <DependentUpon>場次.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影院\座位資訊.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影院\座位資訊.designer.cs">
+      <DependentUpon>座位資訊.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影院\影城.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影院\影城.designer.cs">
+      <DependentUpon>影城.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影院\影城票價資訊.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影院\影城票價資訊.designer.cs">
+      <DependentUpon>影城票價資訊.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影院\影廳.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影院\影廳.designer.cs">
+      <DependentUpon>影廳.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影院\編輯視窗\座位編輯視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影院\編輯視窗\座位編輯視窗.designer.cs">
+      <DependentUpon>座位編輯視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影院\編輯視窗\座位顯示.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影院\編輯視窗\座位顯示.designer.cs">
+      <DependentUpon>座位顯示.cs</DependentUpon>
+    </Compile>
+    <Compile Include="電影院\電影院.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="電影院\電影院.designer.cs">
+      <DependentUpon>電影院.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MDA.resx">
+      <DependentUpon>MDA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\frmKeyword.resx">
+      <DependentUpon>frmKeyword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="主畫面\main商品管理.resx">
+      <DependentUpon>main商品管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主畫面\main優惠券管理.resx">
+      <DependentUpon>main優惠券管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主畫面\main會員管理.resx">
+      <DependentUpon>main會員管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主畫面\main評論管理.resx">
+      <DependentUpon>main評論管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主畫面\main電影管理.resx">
+      <DependentUpon>main電影管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="主畫面\main電影院管理.resx">
+      <DependentUpon>main電影院管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="優惠\Coupon.resx">
+      <DependentUpon>Coupon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="優惠\CouponList.resx">
+      <DependentUpon>CouponList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="優惠\優惠券分析.resx">
+      <DependentUpon>優惠券分析.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\ItemTemplate.resx">
+      <DependentUpon>ItemTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\ItemTemplateTicket.resx">
+      <DependentUpon>ItemTemplateTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\商品.resx">
+      <DependentUpon>商品.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\商品修改.resx">
+      <DependentUpon>商品修改.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\商品明細.resx">
+      <DependentUpon>商品明細.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\報表.resx">
+      <DependentUpon>報表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\新影城.resx">
+      <DependentUpon>新影城.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\新票種.resx">
+      <DependentUpon>新票種.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\票價資訊.resx">
+      <DependentUpon>票價資訊.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\訂單總表.resx">
+      <DependentUpon>訂單總表.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\關鍵字查詢.resx">
+      <DependentUpon>關鍵字查詢.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員\frmBonusPlus.resx">
+      <DependentUpon>frmBonusPlus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員\frmList.resx">
+      <DependentUpon>frmList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員\frmMemChart.resx">
+      <DependentUpon>frmMemChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="評論\Frm_MDA評論分析.resx">
+      <DependentUpon>Frm_MDA評論分析.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影\frmEmail.resx">
+      <DependentUpon>frmEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影\Member.resx">
+      <DependentUpon>Member.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影\MovieCode.resx">
+      <DependentUpon>MovieCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影\MovieIImagesList.resx">
+      <DependentUpon>MovieIImagesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影\MovieImages.resx">
+      <DependentUpon>MovieImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影\MovieLanguage.resx">
+      <DependentUpon>MovieLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="優惠\PJFormMain.resx">
+      <DependentUpon>PJFormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="優惠\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員\frmMemInfo.resx">
+      <DependentUpon>frmMemInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員\frmMemManage.resx">
+      <DependentUpon>frmMemManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員\frmMemNew.resx">
+      <DependentUpon>frmMemNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員\frmMemSearch.resx">
+      <DependentUpon>frmMemSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員\frmMemSign.resx">
+      <DependentUpon>frmMemSign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員\frmMemStart.resx">
+      <DependentUpon>frmMemStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="評論\Frm_MDAcommentForAdmin.resx">
+      <DependentUpon>Frm_MDAcommentForAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="評論\Frm_MDAcommentForMem.resx">
+      <DependentUpon>Frm_MDAcommentForMem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\UserControlPics.resx">
+      <DependentUpon>UserControlPics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影\電影分級.resx">
+      <DependentUpon>電影分級.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影\導演類.resx">
+      <DependentUpon>導演類.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影\演員類.resx">
+      <DependentUpon>演員類.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影\電影圖片.resx">
+      <DependentUpon>電影圖片.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影\電影票房分析.resx">
+      <DependentUpon>電影票房分析.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影院\場次.resx">
+      <DependentUpon>場次.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影院\座位資訊.resx">
+      <DependentUpon>座位資訊.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影院\影城.resx">
+      <DependentUpon>影城.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影院\影城票價資訊.resx">
+      <DependentUpon>影城票價資訊.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影院\影廳.resx">
+      <DependentUpon>影廳.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影院\編輯視窗\座位編輯視窗.resx">
+      <DependentUpon>座位編輯視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影院\編輯視窗\座位顯示.resx">
+      <DependentUpon>座位顯示.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="電影院\電影院.resx">
+      <DependentUpon>電影院.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="MDAModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MDAModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MDAModel.edmx.diagram">
+      <DependentUpon>MDAModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\addpropertyMoon.png" />
+    <Content Include="images\addpropertyMoonblue.png" />
+    <Content Include="images\ascend.png" />
+    <Content Include="images\calcu.png" />
+    <Content Include="images\calen.png" />
+    <Content Include="images\checklistMoon.png" />
+    <Content Include="images\checklistMoonblue.png" />
+    <Content Include="images\clip.png" />
+    <Content Include="images\clock.png" />
+    <Content Include="images\crown.png" />
+    <Content Include="images\cup.png" />
+    <Content Include="images\del.png" />
+    <Content Include="images\del2.png" />
+    <Content Include="images\del3.png" />
+    <Content Include="images\del4.png" />
+    <Content Include="images\del5.png" />
+    <Content Include="images\del6.png" />
+    <Content Include="images\del7.png" />
+    <Content Include="images\descend.png" />
+    <Content Include="images\doc.png" />
+    <Content Include="images\docs.png" />
+    <Content Include="images\fix.png" />
+    <Content Include="images\flow.png" />
+    <Content Include="images\folder.png" />
+    <Content Include="images\heart.png" />
+    <Content Include="images\key.png" />
+    <Content Include="images\listMoon.png" />
+    <Content Include="images\listMoonblue.png" />
+    <Content Include="images\lock.png" />
+    <Content Include="images\member.png" />
+    <Content Include="images\memberAdd.png" />
+    <Content Include="images\menu.png" />
+    <Content Include="images\note.png" />
+    <Content Include="images\orderMoon.png" />
+    <Content Include="images\orderMoonblue.png" />
+    <Content Include="images\pencil.png" />
+    <Content Include="images\pic.png" />
+    <Content Include="images\rise.png" />
+    <Content Include="images\searchM.png" />
+    <Content Include="images\setting.png" />
+    <Content Include="images\star.png" />
+    <Content Include="images\trash.png" />
+    <Content Include="images\trash1.png" />
+    <Content Include="MDAModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MDAModel.Context.cs</LastGenOutput>
+      <DependentUpon>MDAModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="MDAModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MDAModel.edmx</DependentUpon>
+      <LastGenOutput>MDAModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
