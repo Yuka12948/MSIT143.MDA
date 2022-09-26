@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace 電影院
 {
-    public partial class Frm座位資訊 : Form
+    public partial class Frm座位資訊 : Form//todo 0111
     {
         MDAEntities 座位資訊data = new MDAEntities();
         private int _id = -1;
