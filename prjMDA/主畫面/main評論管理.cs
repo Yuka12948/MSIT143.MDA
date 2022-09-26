@@ -10,7 +10,8 @@ namespace prjMDA
     {        
         public Frm評論管理()
         {
-            InitializeComponent();           
+            InitializeComponent();  
+            //暐婷真D好棒棒
         }
 
         private void toolStripLab評論管理_Click(object sender, EventArgs e)
