@@ -11,6 +11,7 @@ namespace prjMDA
         public Frm電影管理()
         {
             InitializeComponent();
+            //薇薇~薇薇~好棒棒!!
         }
 
         private void toolStripLab導演類_Click(object sender, EventArgs e)
