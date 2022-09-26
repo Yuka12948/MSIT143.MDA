@@ -16,6 +16,7 @@ namespace prjMDAComment
         public Frm_MDA評論分析()
         {
             InitializeComponent();
+            //笑死 by正楷
         }
 
         MDAEntities dbMDA = new MDAEntities();
