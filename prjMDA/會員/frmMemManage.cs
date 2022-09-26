@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace prjMDA.會員
 {
+    //77777
     public partial class frmMemManage : Form
     {
         List<string> gender = new List<string>() { "不公開", "男", "女", "多元性別" };
